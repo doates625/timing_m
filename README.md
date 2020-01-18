@@ -7,6 +7,7 @@ This package contains timing related functions and classes. The files in this
 package are described below:
 
 - Timer : Class for measuring time between events
+- ProgDisp: Class for reporting progress of long algorithms
 
 ### Cloning and Submodules
 Clone this repo as '+timing' and add the containing dir to the Matlab path.
