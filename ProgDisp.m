@@ -20,6 +20,7 @@ classdef ProgDisp < handle
             %   Inputs:
             %   - disp_int = Display interval [s]
             import('timing.Timer');
+            if nargin < 1, disp_int = 1; end
             obj.disp_int = disp_int;
             obj.init_tmr = Timer();
             obj.disp_tmr = Timer();
@@ -45,16 +46,16 @@ classdef ProgDisp < handle
                 obj.disp_tmr.tic();
                 t_left = (1.0 - prog) * obj.init_tmr.toc() / prog;
                 if t_left > 86400
-                    str = sprintf('%.1f day(s)', t_left / 86400);
+                    str = sprintf('%.1f day', t_left / 86400);
                 elseif t_left > 3600
-                    str = sprintf('%.1f hour(s)', t_left / 3600);
+                    str = sprintf('%.1f hour', t_left / 3600);
                 elseif t_left > 60
-                    str = sprintf('%.1f min(s)', t_left / 60);
+                    str = sprintf('%.1f min', t_left / 60);
                 else
-                    str = sprintf('%.1f sec(s)', t_left);
+                    str = sprintf('%.1f sec', t_left);
                 end
                 prog = prog * 100.0;
-                fprintf('Progress; %.3f%%, Time left: %s\n', prog, str);
+                fprintf('%.3f%% (%s)\n', prog, str);
             end
         end
     end
