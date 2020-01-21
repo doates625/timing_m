@@ -3,8 +3,7 @@ Matlab package for timing-related functions
 Written by Dan Oates (WPI Class of 2020)
 
 ### Description
-This package contains timing related functions and classes. The files in this
-package are described below:
+This package contains timing related functions and classes. The files in this package are described below:
 
 - Timer : Class for measuring time between events
 - ProgDisp: Class for reporting progress of long algorithms
